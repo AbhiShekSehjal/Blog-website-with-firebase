@@ -1,19 +1,35 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .btn:active {
     cursor: wait;
 }
 
+.btn {
+    transition: all 0.2s ease !important;
+}
+
+.btn:hover {
+    border-radius: 30px !important;
+    background-color: rgb(132, 0, 255) !important;
+}
+
+#navbar {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+}
+
+.showBlogsNavbar{
+    position: fixed !important;
+    top: 0 !important;
+}
+
 /* indexPage */
 .indexPage {
     height: 100vh;
-}
-
-.navbar {
-    border-bottom: 1px solid;
 }
 
 .logo {
@@ -47,6 +63,7 @@
 .leftSideBox {
     /* background: #00000070; */
     flex: 0.6;
+    margin-left: 70px;
 }
 
 .headingLine {
@@ -56,20 +73,41 @@
     justify-content: center;
     font-size: 60px;
     font-weight: 600;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .rightSideBox {
-    background: url("https://cdn.pixabay.com/photo/2019/12/05/09/54/black-and-white-4674690_1280.jpg");
     flex: 0.6;
     height: 82vh;
-    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgb(138, 102, 55); */
 }
 
+.bgImage {
+    width: 70%;
+    height: 75%;
+    background: url("./bgPng.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-name: rotateBgImage;
+    animation-duration: 20s;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
 
-/* footer */
-.footer {
-    border-top: 1px solid;
+@keyframes rotateBgImage {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
 }
 
 .footerLinks {
@@ -80,5 +118,167 @@
     text-transform: capitalize;
 }
 
-/* blogsContainer */
-.blogsContainer {}
+/* loginPage */
+
+
+.loginForm,
+.signUpPage {
+    margin: 60px auto;
+    box-shadow: rgba(149, 157, 165, 0.888) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 60vh;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#loginForm,
+#signUpForm {
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    gap: 10px;
+}
+
+input,
+textarea {
+    border: none;
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+
+/* blogForm */
+.blogForm {
+    margin: 60px auto;
+    box-shadow: rgba(149, 157, 165, 0.888) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 60vh;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: lightskyblue;
+}
+
+#blogform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    gap: 10px;
+}
+
+/* card */
+#pageHeaderTitle{
+    margin-top: 100px !important;
+}
+
+
+.postcard {
+    padding: 20px;
+    display: flex;
+}
+
+.postcard__img_link {
+    height: 250px;
+    margin-right: 60px;
+}
+
+.postcard__img_link:hover {
+    filter: saturate(0);
+}
+
+.postcard__img {
+    height: 100%;
+    object-fit: cover;
+    width: 400px;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+h1,
+.h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.small {
+    font-size: 80%;
+}
+
+.postcard__title a {
+    font-size: 1.75rem;
+    text-decoration: none;
+}
+
+.postcard__text {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+.postcard__tagbox  {
+    margin-top: auto;
+}
+
+.postcard__tagbox a{
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: lowercase;
+
+}
+
+.postcard__subtitle {
+    font-weight: 300;
+}
+
+/* loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    /* blue color spinner */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

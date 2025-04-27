@@ -21,38 +21,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
-    <title>Blog web</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Histomind | Login</title>
 </head>
 
 <body>
+   
+    <div id="loader" style="display: none;">
+        <div class="spinner"></div>
+      </div>
 
-    <!-- Navbar -->
-    <nav class="navbar p-3">
-        <div class="logo">Blog Web</div>
+    <div class="loginPage">
+        <!-- Navbar -->
+        <nav class="navbar p-3 bg-light" id="navbar">
+            <div class="logo">Histomind</div>
 
-        <div class="otherLinks ms-auto">
-            <ul class="gap-3 listOfOtherLinks mb-0">
-                <li>Our&nbsp;story</li>
-                <li><a href="blog.html" id="CreateBlogLink">Create blog</a></li>
+            <div class="otherLinks ms-auto">
+                <ul class="gap-3 listOfOtherLinks mb-0">
+                    <a href="ourStory.html"><li>Our&nbsp;story</li></a>
+                    <!-- <li><a href="blog.html" id="CreateBlogLink">Create blog</a></li> -->
 
-                <li><a href="showBlogs.html">All blogs</a></li>
+                    <li><a href="showBlogs.html">All blogs</a></li>
 
-                <li><a href="signup.html" class="btn btn-primary btn-sm" id="signUpLink">signUp</a></li>
+                    <li><a href="signup.html" class="btn btn-primary btn-sm" id="signUpLink">signUp</a></li>
 
-                <li><a href="login.html" class="btn btn-primary btn-sm" id="loginLink">login</a></li>
+                    <!-- <li><a href="login.html" class="btn btn-primary btn-sm" id="loginLink">login</a></li> -->
 
-                <li class="btn btn-danger btn-sm" id="logoutLink">Logout</li>
-            </ul>
+                    <li class="btn btn-danger btn-sm" id="logoutLink">Logout</li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="loginForm">
+            <h2>Login to <b>Histomind</b></h2>
+            <form id="loginForm" class="form-control">
+                <input type="text" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="password" required>
+                <button id="loginBtn" class="btn btn-success btn-sm">Login</button>
+                <a href="signup.html" style="text-align: center;" class="btn btn-success btn-sm">SignUp</a>
+            </form>
         </div>
-    </nav>
-
-    <h2>Login to <b>Blog web</b></h2>
-    <form id="loginForm">
-        <input type="text" id="loginEmail" placeholder="Email" required>
-        <input type="password" id="loginPassword" placeholder="password" required>
-        <button id="loginBtn" class="btn btn-primary btn-sm">signUp</button>
-    </form>
-
+    </div>
     <!-- bootstrap js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
